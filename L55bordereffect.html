@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Rotate Border Effect</title>
+</head>
+<style type="text/css">
+     *{
+          box-sizing: border-box;
+     }
+
+     body{
+          font-family: sans-serif;
+          height: 100vh;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          margin: 0;
+     }
+
+     .box{
+          width: 200px;
+          height: 200px;
+          background-color: #fff;
+
+          position: relative;
+     }
+
+     .box h1{
+          color: #262626;
+          font-size: 24px;
+          text-align: center;
+          text-transform: uppercase;
+          
+          padding: 0;
+          margin: 0;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+     }
+
+     span{
+          font-size: 30px;
+          color: rgb(4, 139, 4);
+     }
+
+     .box::before{
+          content: ' ';
+          width: 100%;
+          height: 100%;
+          border-top:  4px solid rgb(4, 139, 4);
+          border-bottom: 4px solid rgb(4, 139, 4);
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-sizing: border-box;
+
+          transform: scaleX(0);
+          transition: all 0.5s;
+          /* transition-delay: 0.5s; */
+     }
+
+     .box:hover::before{
+          transform: scaleX(1);
+     }
+
+     .box::after{
+          content: ' ';
+          width: 100%;
+          height: 100%;
+          border-left:  4px solid rgb(4, 139, 4);
+          border-right: 4px solid rgb(4, 139, 4);
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-sizing: border-box;
+
+          transform: scaleY(0);
+          transition: all 0.5s;
+          transition-delay: 0.5s;
+     }
+
+     .box:hover::after{
+          transform: scaleY(1);
+     }
+
+     /* .rotate{
+          width: 100%;
+          height: 100%;
+          border: 4px solid rgb(4, 139, 4);
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          
+          transform: rotate(45deg);
+     } */
+
+     .rotated::before{
+          content: ' ';
+          width: 100%;
+          height: 100%;
+          border-top: 4px solid rgb(4, 139, 4);
+          border-bottom: 4px solid rgb(4, 139, 4);
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-sizing: border-box;
+
+          transform: rotate(45deg) scaleX(0);
+          transition: all 0.5s;
+     }
+
+     .box:hover .rotated::before{
+          transform: rotate(45deg) scaleX(1);
+          transition-delay: 1s;
+     }
+
+     .rotated::after{
+          content: ' ';
+          width: 100%;
+          height: 100%;
+
+          border-left: 4px solid rgb(4, 139, 4);
+          border-right: 4px solid rgb(4, 139, 4);
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-sizing: border-box;
+
+          transform: rotate(45deg) scaleY(0);
+          transition: all 0.5s;
+          transition-delay: 0.7s;
+     }
+
+     .box:hover .rotated::after{
+          transform: rotate(45deg) scaleY(1);
+          transition-delay: 1.5s;
+     }
+
+</style>
+<body>
+     <div class="box">
+          <span class="rotated"></span>
+          <h1>DLT<br><span>CSS</span><br>Animation<br>Batch1</h1>
+     </div>
+</body>
+</html>

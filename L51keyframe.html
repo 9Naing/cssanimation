@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+     <title>Document</title>
+</head>
+<style type="text/css">  
+     body{
+          margin: 0;
+     }
+
+     div{
+          width: 150px;
+          height: 150px;
+          background-color: red;
+
+          animation-name: myani;
+          animation-duration: 3s;
+          /* animation-fill-mode: forwards; */
+          animation-iteration-count: infinite;  /*We can declare Number as well*/
+          animation-timing-function: ease;  /*ease-in ease-out ease-in-out linear*/
+          /* animation-direction: reverse; */
+          /* animation-direction: alternate; */
+          animation-direction: alternate-reverse;
+          
+          /*name du itc tf dir ad*/
+          animation: myani 3s 3 ease-in alternate 2s;
+     }
+
+     @keyframes myani{
+          0%{
+               transform: translateX(0px);
+          }
+
+          50%{
+               transform: translateX(1000px);
+          }
+
+          100%{
+               transform: translate(1000px, 500px);
+          }
+     }
+</style>
+<body>
+     <div></div>
+</body>
+</html>

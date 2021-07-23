@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+     <title>Animate Background</title>
+</head>
+<style type="text/css">
+     body{
+          font-family: sans-serif;
+          background-color: #333;
+          height: 100vh;
+
+          margin: 0;
+     }
+
+     .container{
+          width: 100%;
+          height: 100%;
+
+          position: relative;
+
+          overflow: hidden;
+     }
+
+     .text{
+          color: #fff;
+          font-size: 45px;
+          border-top: 5px solid #fff;
+          border-bottom: 5px solid #fff;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+
+          transform: translate(-50%, -50%);
+     }
+
+     .square{
+          background-color: #f4f4f4;
+
+          position: absolute;
+          bottom: -100%;
+
+          animation: myani 7s ease-in-out infinite;
+     }
+
+     .square:nth-child(1){
+          width: 75px;
+          height: 75px;
+
+         left : 7%;
+         animation-delay: 0s;
+     }
+
+     .square:nth-child(2){
+          width: 85px;
+          height: 85px;
+
+         left : 15%;
+         animation-delay: 2s;
+     }
+
+     .square:nth-child(3){
+          width: 70px;
+          height: 70px;
+
+         left : 27%;
+         animation-delay: 1.5s;
+     }
+
+     .square:nth-child(4){
+          width: 75px;
+          height: 75px;
+
+         left : 40%;
+         animation-delay: 4s;
+     }
+
+     .square:nth-child(5){
+          width: 55px;
+          height: 55px;
+
+         left : 55%;
+         animation-delay: 4.5s;
+     }
+
+     .square:nth-child(6){
+          width: 70px;
+          height: 70px;
+
+         left : 67%;
+         animation-delay: 2.5s;
+     }
+
+     .square:nth-child(7){
+          width: 95px;
+          height: 95px;
+
+         left : 77%;
+         animation-delay: 5s;
+     }
+
+     .square:nth-child(8){
+          width: 35px;
+          height: 35px;
+
+         left : 85%;
+         animation-delay: 3.2s;
+     }
+
+     .square:nth-child(9){
+          width: 25px;
+          height: 25px;
+
+         left : 93%;
+         animation-delay: 4.2s;
+     }
+
+     .square:nth-child(10){
+          width: 80px;
+          height: 80px;
+
+         left : 98%;
+         animation-delay: 3.9s;
+     }
+
+     @keyframes myani{
+          0%{
+               bottom: -100px;
+          }
+
+          100%{
+               bottom: 100%;
+               transform: rotate(180deg);
+               opacity: 0;
+          }
+     }
+</style>
+<body>
+     <div class="container">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+
+          <div class="text">css animation small projects</div>
+     </div>
+</body>
+</html>

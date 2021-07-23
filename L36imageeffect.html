@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Image Effect</title>
+</head>
+<style type="text/css">
+     body{
+          font-family: sans-serif;
+          background-color: #272727;
+          height: 100vh;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          margin: 0;
+     }
+
+     .container{
+          width: 500px;
+          height: 500px;
+          border-radius: 10px;
+
+          position: relative;
+          overflow: hidden;
+     }
+
+     .container img{
+          width: 100%;
+     }
+
+     .container::before{
+          content: ' ';
+          width: 100%;
+          height: 100%;
+          background-color: rgb(133, 185, 133, 0.3);
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          transform: translateY(100%);
+          transition: all 0.3s;
+          transition-delay: 0.3s;
+     }
+
+     .container:hover::before{
+          transform: translateY(0%);
+          transition-delay: 0s;
+     }
+
+     .caption{
+          width: 100%;
+          height: 100%;
+          color: #fff;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          transform: translateY(-20px);
+     
+          transition: all 0.3s;
+          transition-delay: 0.4s;
+
+          z-index: 1;
+
+          opacity: 0;
+     }
+
+     .caption h1{
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin: 0;
+     }
+
+     .caption p{
+          text-transform: capitalize;
+          font-size: 18px;
+          background-color: rgb(211, 130, 64);
+
+          padding: 10px;
+     }
+
+     .container:hover .caption{
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.4s;
+     }
+</style>
+<body>
+     <div class="container">
+          <img src="./img/cat.jpg" alt="cat">
+          <div class="caption">
+               <h1>How Sweet !</h1>
+               <p>This is a css animatin lesson for image cat.</p>
+          </div>
+     </div>
+</body>
+</html>

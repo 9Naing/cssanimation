@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+     <title></title>
+</head>
+<style type="text/css">
+     body{
+          font-family: sans-serif;
+          background-color: #2f2f2f;
+          height: 100vh;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          margin: 0;
+     }
+
+     .wave{
+          width: 500px;
+          height: 500px;
+
+          position: relative;
+     }
+
+     h2{
+          text-transform: uppercase;
+          font-size: 170px;
+
+          position: absolute;
+     }
+
+     h2:nth-child(1){
+          color: transparent;
+          -webkit-text-stroke: 2px  #03a9f4;
+     }
+
+     h2:nth-child(2){
+          color: #03a9f4;
+
+          /* clip-path: polygon(0 27%, 100% 46%, 100% 100%, 0 100%); */
+
+          animation-name:  myani;
+          animation-duration: 2s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+     }
+
+     @keyframes myani{
+          0%{
+               clip-path: polygon(0 39%, 13% 34%, 27% 33%, 38% 34%, 55% 43%, 64% 44%, 79% 42%, 90% 35%, 100% 26%, 100% 98%, 0% 99%);
+          }
+
+          50%{
+               clip-path: polygon(0 45%, 11% 46%, 24% 50%, 43% 55%, 54% 53%, 66% 49%, 76% 45%, 88% 38%, 100% 32%, 100% 98%, 0% 99%);
+          }
+
+          100%{
+               clip-path: polygon(0 38%, 11% 38%, 23% 39%, 35% 43%, 50% 47%, 62% 47%, 78% 43%, 89% 37%, 100% 31%, 100% 98%, 0% 99%);
+          }
+     }
+</style>
+<body>
+     <div class="wave">
+          <h2>wave</h2>
+          <h2>wave</h2>
+     </div>
+</body>
+</html>
