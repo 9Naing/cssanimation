@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<head>
+     <title>Loading Effect</title>
+</head>
+<style type="text/css">
+     *{
+          box-sizing: border-box;
+     }
+
+     body{
+          font-family: sans-serif;
+          background: #1f1e1e;
+          height: 100vh;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          margin: 0;
+     }
+
+     .container{
+          width: 130px;
+          height: 130px;
+          /* background-color: #ff0; */
+          /* border: 2px dashed silver; */
+          border-radius: 50%;
+
+          position: relative;
+          overflow: hidden;
+     }
+
+     .container::before{
+          content: ' ';
+          width: 35px;
+          height: 35px;
+          background-color: rgb(211, 62, 62);
+          border-radius: 50%;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+         animation-name: myani;
+         animation-duration: 0.63s;
+         animation-timing-function: ease-in-out;
+         animation-iteration-count: infinite;
+         animation-direction: alternate;
+     }
+
+     .container::after{
+          content: ' ';
+          width: 35px;
+          height: 35px;
+          background-color: rgb(30, 138, 30);
+          border-radius: 50%;
+
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          animation: myani2 0.63s ease-in-out infinite alternate;
+          animation-delay: 0.2s;
+     }
+
+     @keyframes myani{
+          0%{
+               top: 0;
+               right: 0;
+               opacity: 1;
+          }
+
+          25%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          50%{
+               top: 50%;
+               left: 50%;
+               opacity: 0;
+               transform: scale(0.3);
+          }
+
+          75%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          100%{
+               top: calc(100% - 35px);
+               left: calc(100% - 35px);
+               opacity: 1;
+          }
+     }
+
+     
+     @keyframes myani2{
+          0%{
+               top: 0;
+               right: 0;
+               opacity: 1;
+          }
+
+          25%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          50%{
+               top: 50%;
+               right: 50%;
+               opacity: 0;
+               transform: scale(0.3);
+          }
+
+          75%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          100%{
+               top: calc(100% - 35px);
+               right: calc(100% - 35px);
+               opacity: 1;
+          }
+     }
+
+     .circle{
+          width: 35px;
+          height: 35px;
+          background-color: violet;
+          border-radius: 50%;
+
+          position: absolute;
+          top: -17.5px;
+          left: 50%;
+          transform: translate(-50%);
+
+          animation: myani3 0.63s ease-in-out infinite alternate;
+          animation-delay: 0.3s;
+     }
+
+     @keyframes myani3{
+          0%{
+               top: -17.5px;
+               left: 50%;
+               transform: translate(-50%);
+               opacity: 1;
+          }
+
+          25%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          50%{
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, 50%);
+               opacity: 0;
+               transform: scale(0.3);
+          }
+
+          75%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          100%{
+               top:calc(100% - 17.5px);
+               left: 50%;
+               transform: translate(-50%);
+               opacity: 1;
+          }
+     }
+
+     .circle1{
+          width: 35px;
+          height: 35px;
+          background-color:turquoise;
+          border-radius: 50%;
+
+          position: absolute;
+          top: 50%;
+          left: -17.5px;
+          transform: translateY(-50%);
+
+          animation: myani4 0.63s ease-in-out infinite alternate;
+          animation-delay: 0.4s;
+     }
+
+     @keyframes myani4{
+          0%{
+               top: 50%;
+               left: -17.5px;
+               transform: translateY(-50%);
+               opacity: 1;
+          }
+
+          25%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          50%{
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, 50%);
+               opacity: 0;
+               transform: scale(0.3);
+          }
+
+          75%{
+               transform: scale(0.7);
+               opacity: 0.5;
+          }
+
+          100%{
+               top: 50%;
+               left: calc(100% - 17.5px);
+               transform: translateY(-50%);
+               opacity: 1;
+          }
+     }
+
+h1 {
+  color: #333;
+  font-size: 2.5em;
+  letter-spacing: 5px;
+  line-height: 1.4;
+  font-family: sans-serif;
+  text-transform: uppercase;
+
+  position: relative;
+}
+
+h1::before {
+  content: attr(data-text);
+  width: 100%;
+  color:  #f2aa4cff;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* border-bottom: 7px solid dodgerblue; */
+  animation: lod 2s linear infinite;
+  overflow: hidden;
+}
+
+@keyframes lod {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+</style>
+<body>
+     <div class="container">
+          <div class="circle"></div>
+          <div class="circle1"></div>
+     </div>
+
+     <h1 data-text="Loading...">Loading...</h1>
+</body>
+</html>
